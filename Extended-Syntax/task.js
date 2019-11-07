@@ -49,9 +49,6 @@ function calculateDrinkTask() {
 }
 
 function askDrink(name, dateOfBirthday) {
-    let datet = (new Date) - dateOfBirthday;
-
-
     let age = (new Date().getFullYear()) - dateOfBirthday.getFullYear();
 
     if (age > 17) {
