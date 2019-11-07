@@ -12,13 +12,15 @@ function calculateQuadraticEquation() {
 
 function getResult(a, b, c) {
     let d = b ** 2 - 4 * a * c;
-    if (d < 0) {
-        return [];
-    } else if (d === 0) {
-        return [(-b + d ** 0.5) / (2 * a)];
-    } else {
-        return [(-b + d ** 0.5) / 2, (-b - d ** 0.5) / (2 * a)];
+    let result = [];
+
+    if (d === 0) {
+        result.push((-b + d ** 0.5) / (2 * a));
+    } else if (d > 0) {
+        result.push((-b + d ** 0.5) / 2, (-b - d ** 0.5) / (2 * a));
     }
+
+    return result;
 }
 
 function calculateAverageRating() {
@@ -33,12 +35,12 @@ function getAverageMark(marks) {
         marks = marks.slice(0, 5);
     }
 
-    let total_mark = 0;
+    let totalMark = 0;
     for (let mark of marks) {
-        total_mark += mark;
+        totalMark += mark;
     }
 
-    return total_mark / marks.length;
+    return totalMark / marks.length;
 }
 
 function calculateDrinkTask() {
