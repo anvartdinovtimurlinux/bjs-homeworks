@@ -1,3 +1,5 @@
+'use strict'
+
 // Задача №1
 console.log('------Задача №1------');
 
@@ -6,7 +8,7 @@ function getSolutions(a, b, c) {
   const result = {
     D
   };
-
+  
   if (D === 0) {
     const x1 = -b / (2 * a);
     result.roots = [x1];
@@ -16,7 +18,7 @@ function getSolutions(a, b, c) {
     const x2 = (-b - D ** 0.5) / (2 * a);
     result.roots = [x1, x2];
   }
-
+  
   return result;
 }
 
@@ -24,7 +26,7 @@ function showSolutionsMessage(a, b, c) {
   const result = getSolutions(a, b, c);
   console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
   console.log(`Значение дискриминанта: ${result.D}`);
-
+  
   if (result.D === 0) {
     console.log(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
   } else if (result.D > 0) {
@@ -46,7 +48,7 @@ function getAverageScore(data) {
   const result = {};
   let totalMark = 0;
 
-  for (subject in data) {
+  for (const subject in data) {
     const averageMark = getAverageArray(data[subject]);
     result[subject] = averageMark;
     totalMark += averageMark;
@@ -84,8 +86,10 @@ console.log('------Задача №3------');
 
 function getPersonData(secretData) {
   const result = {};
+  
+  for (let key in secretData) {
+    let newKey;
 
-  for (key in secretData) {
     if (key === 'aaa') {
       newKey = 'firstName';
     } else {
@@ -98,9 +102,9 @@ function getPersonData(secretData) {
   return result;
 }
 
-function decoder(code) {
-  return code ? 'Эмильо' : 'Родриго';
-}
+  function decoder(code) {
+    return code ? 'Эмильо' : 'Родриго';
+  }
 
 console.log(getPersonData({
   aaa: 0,
