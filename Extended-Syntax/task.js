@@ -15,9 +15,9 @@ function getResult(a, b, c) {
     let result = [];
 
     if (d === 0) {
-        result.push((-b + d ** 0.5) / (2 * a));
+        result.push(-b / (2 * a));
     } else if (d > 0) {
-        result.push((-b + d ** 0.5) / 2, (-b - d ** 0.5) / (2 * a));
+        result.push((-b + d ** 0.5) / (2 *a), (-b - d ** 0.5) / (2 * a));
     }
 
     return result;
