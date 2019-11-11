@@ -40,6 +40,9 @@ function getAverageMark(marks) {
         totalMark += mark;
     }
 
+    // const totalMark = marks.reduce((acc, mark) => acc + mark, 0);
+    // вот и более элегантный вариант
+
     return totalMark / marks.length;
 }
 
