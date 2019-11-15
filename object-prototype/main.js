@@ -9,7 +9,14 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-  // код для задачи №1 писать здесь
+  const currentDate = new Date().getTime();
+  const birthdayDate = new Date(birthday).getTime();
+  const diff = currentDate - birthdayDate;
+
+  const millisecondsPerYear = 31557600000;  //с учетом високосных
+  const age = diff / millisecondsPerYear;
+
+  return age > 18;
 }
 
 function initPrintAnimalSound() {
