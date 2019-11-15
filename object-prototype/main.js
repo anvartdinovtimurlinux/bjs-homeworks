@@ -1,39 +1,52 @@
+'use strict';
+
 function initCheckBirthday() {
-    const birthday = document.getElementById('birthday').value;
+  const birthday = document.getElementById('birthday').value;
 
-    const result = checkBirthday(birthday) ? "Да" : "Нет";
+  const result = checkBirthday(birthday) ? "Да" : "Нет";
 
-    document.getElementById('disclaimer').innerHTML = result;   
+  document.getElementById('disclaimer').innerHTML = result;
 }
 
 function checkBirthday(birthday) {
-    // код для задачи №1 писать здесь
+  // код для задачи №1 писать здесь
 }
 
 function initPrintAnimalSound() {
-    const animal = {
-        sound: 'grrrr',
-    };
+  const animal = {
+    sound: 'grrrr',
+  };
 
-    const result = getAnimalSound(animal);
+  const result = getAnimalSound(animal);
 
-    document.getElementById('sound').innerHTML = result;   
+  document.getElementById('sound').innerHTML = result;
 }
 
 function getAnimalSound(animal) {
-    // код для задачи №2 писать здесь
+  if (typeof animal === 'undefined') {
+    return null;
+  }
+  const sound = animal.sound;
+  return sound;
 }
 
 function initCalculateStatement() {
-    for (let idx = 0; idx < 3; idx++) {
-        const marks = document.getElementById('learner-' + idx).value.split(',');
+  for (let idx = 0; idx < 3; idx++) {
+    const marks = document.getElementById('learner-' + idx).value.split(',');
 
-        const average = getAverageMark(marks);
+    const average = getAverageMark(marks);
 
-        document.getElementById('learner-' + idx + '-average').innerHTML = average;
-    }
+    document.getElementById('learner-' + idx + '-average').innerHTML = average;
+  }
 }
 
 function getAverageMark(marks) {
-    // код для задачи №3 писать здесь
+  let totalMark = 0;
+  
+  for (const mark of marks) {
+    totalMark += Number(mark);
+  }
+
+  const roundedAverage = Math.round(totalMark / marks.length);
+  return roundedAverage;
 }
