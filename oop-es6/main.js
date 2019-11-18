@@ -234,10 +234,9 @@ console.log(longBow1.isBroken()); // false
 console.log('\n\n-----Задача №3. Школьный журнал-----');
 
 class StudentLog {
-  subjects = {};
-
   constructor(name) {
     this.name = name;
+    this.subjects = {};
   }
 
   getName() {
